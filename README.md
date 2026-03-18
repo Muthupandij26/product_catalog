@@ -1,8 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Product Catalog
 
-## Getting Started
+A modern e-commerce product catalog application built with Next.js, React, and TypeScript. This application provides a complete shopping experience with product browsing, detailed product views, and a shopping cart.
 
-First, run the development server:
+## Installation
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm, yarn, pnpm, or bun package manager
+
+### Steps
+
+1. **Clone or navigate to the project directory:**
+```bash
+cd product-catalog
+```
+
+2. **Install dependencies:**
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+## Running the Project
+
+### Development Server
+Start the development server with hot-reload enabled:
 
 ```bash
 npm run dev
@@ -14,27 +41,76 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Production Build
+To create an optimized production build:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm run build
+npm start
+# or
+yarn build
+yarn start
+# or
+pnpm build
+pnpm start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Linting
+Check code quality with ESLint:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+product-catalog/
+├── pages/              # Next.js pages and routes
+│   ├── index.tsx      # Home page with product listing
+│   ├── cart.tsx       # Shopping cart page
+│   ├── products/
+│   │   └── [productId].tsx  # Dynamic product detail page
+│   └── api/           # API routes
+├── components/         # Reusable React components
+│   ├── Header.tsx     # Navigation header
+│   ├── ProductCard.tsx # Product item display
+│   └── ProductDetail.tsx # Product details view
+├── context/           # React Context for state management
+│   └── CartContext.tsx # Shopping cart state management
+├── styles/           # Global styles
+├── types/            # TypeScript type definitions
+└── public/           # Static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Approach & Design Choices
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend Architecture
+- **Next.js Pages Router**: Chosen for simplicity and server-side rendering capabilities, allowing for better SEO on product pages.
+- **React Context API**: Used for cart state management, eliminating the need for external state management libraries and keeping dependencies minimal.
 
-## Deploy on Vercel
+### Component Design
+- **Modular Components**: Each feature is encapsulated in its own component (ProductCard, ProductDetail, Header) for reusability and maintainability.
+- **Type Safety**: Full TypeScript adoption ensures robust code with better IDE support and compile-time error detection.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Styling
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development and consistent styling across the application.
+- **PostCSS**: Modern CSS processing for vendor prefixes and optimizations.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### API & Data Fetching
+- **Axios**: Lightweight HTTP client for fetching product data and API calls.
+- **API Routes**: Next.js API routes for backend functionality without requiring a separate server.
+
+### Developer Experience
+- **ESLint**: Code linting for maintaining consistent code quality and catching potential issues early.
+- **Hot Module Reload**: Automatic browser updates during development for faster feedback loops.
+
+## Available Features
+- ✅ Product catalog with listing and search
+- ✅ Product detail pages with dynamic routing
+- ✅ Shopping cart functionality
+- ✅ Responsive header navigation
+- ✅ Type-safe development with TypeScript
+- ✅ Modern styling with Tailwind CSS
