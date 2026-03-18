@@ -2,6 +2,13 @@
 
 A modern e-commerce product catalog application built with Next.js, React, and TypeScript. This application provides a complete shopping experience with product browsing, detailed product views, and a shopping cart.
 
+## Demo Video
+
+
+https://github.com/user-attachments/assets/4dac6b18-cd61-445b-861d-16073c4d7f84
+
+
+
 ## Installation
 
 ### Prerequisites
